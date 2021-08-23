@@ -1,0 +1,99 @@
+
+#header{
+	height: 200px;
+	
+}
+#headerTitle {
+	font-family: 'Montserrat', sans-serif;
+	will-change: transform, opacity;
+	animation: slide_from_top 2s;
+	
+	margin-bottom: -15px;
+}
+
+#headerTitle:before, #headerTitle:after {
+	background-color: #000;
+	content: "";
+	display: inline-block;
+	height: 1px;
+	position: relative;
+	vertical-align: middle;
+	width: 20%;
+	animation-delay: 2s;
+}
+.jumbotron {
+	background: rgba(169,169,169,0.0);
+	animation-delay: 1s;
+	margin: auto;
+}
+#backgroundBody{
+	animation: easeIn 2s;
+	background-size: auto;
+}
+
+body {
+	background-image: url("../images/white-triangle-369b8d2d.jpg");
+	animation-delay: 1s;
+	
+}
+
+#buttonMain{
+	animation: slide_from_bottomBTN 2s;
+	transform: translateY(1050%);
+	transform: translateY(0%);
+	
+}
+
+.vertical-center {
+  
+	transform: translateY(0%);
+}
+
+html {
+    overflow: scroll;
+    overflow: hidden;
+}
+::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+
+/*Animations*/
+@keyframes slide_from_top{
+	0%{
+		transform: translateY(-150%)
+	}
+	100%{
+		transform: translateY(0%)
+	}
+	
+}
+@keyframes slide_from_bottomBTN{
+	0%{
+		transform: translateY(1050%)
+	}
+	100%{
+		transform: translateY(0%)
+	}
+	
+}
+@keyframes slide_from_left{
+	0%{
+		transform: translateX(-150%)
+	}
+	100%{
+		transform: translateX(0%)
+	}
+	
+}
+
+
+@keyframes easeIn{
+	0%{
+		opacity: 0%
+	}
+	100%{
+		opacity: 100%
+	}
+	
+}

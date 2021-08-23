@@ -1,0 +1,19 @@
+{
+  "name": "cosc349-notes",
+  "version": "1.0.0",
+  "description": "A simple note taking app",
+  "main": "node.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "tane123",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^4.4.1",
+    "jquery": "^3.6.0",
+    "popper.js": "^1.11.0"
+  }
+}
