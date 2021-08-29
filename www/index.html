@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="icon" href="file:///MACOS/Users/tane/favicon.ico">
+<title>Narrow Jumbotron Template for Bootstrap</title>
+<!-- Bootstrap core CSS --> 
+<!--	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js type="text/javascript"></script>--> 
+<script src="node_modules/jquery/dist/jquery.js"></script> 
+<script src="node_modules/popper.js/dist/popper.min.js"> </script> 
+<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script> 
+<script src="jQueryAssets/SpryDOMUtils.js"></script> 
+<script src="index.js"></script>
+<link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+<style type="text/css"></style>
+<link href="views/main.css" rel="stylesheet" type="text/css">
+<!-- Custom styles for this template -->
+</head>
+<body>
+<div id="headerPad">&nbsp;</div>
+&nbsp;
+<div class="container"  id="backgroundBody">
+  <div class="header clearfix"> </div>
+  <header>
+    <h1 class=" col-xl-12 text-center" id="header"><strong> &nbsp;</strong></h1>
+    &nbsp;&nbsp;</header>
+  <h1 class="text-center vertical-center" id="headerTitle"><strong>Note Taker 5000</strong></h1>
+  <div class="container">
+    <div class="container">
+      <div class="row">
+        <div class="offset-xl-2 col-xl-8">
+          <div class="container-fluid">
+            <div class="jumbotron">
+              <h2 class="display-5 text-center">Hello, welcome to the NoteTaker5000</h2>
+              <p class="lead text-center">Simple Note Taker This app is designed to be as simple as possible. Just sign up, log in and start creating beautifully simple notes today. <strong>Login or Sign Up below! </strong> </p>
+              <p class="text-center">
+                <button type="button" class="btn btn-primary" id="buttonMain" data-toggle="modal" data-target="#myModal">Login</button>
+              </p>
+              <p class="lead text-center">
+                <button type="button" class="btn btn-dark" id="buttonMain">Sign Up</button>
+              </p>
+              <div class="modal fade" id="myModal" tabindex="0" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <h5 class="modal-title" id="userImage" style="text-align:center"><img style=" z-index: 1; position: relative" src="images/avatardefault_92824.png" class="center-block img-circle logo-margin-negative"></h5>
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+                    </div>
+                    <div class="modal-body">
+                      <form>
+                        <div class="form-group">
+                          <input type="text" class="form-control" name="username" placeholder="Username" required="required" id="username">
+                        </div>
+                        <div class="form-group">
+                          <input type="password" class="form-control" name="pin" placeholder="Pin" required="required" id="pin">
+                        </div>
+                        <div class="form-group">
+                          <button type="submit" class="btn btn-primary btn-lg btn-block login-btn" id="login_button">Login</button>
+                        </div>
+                      </form>
+                    </div>
+                    <div class="modal-footer"> <a href="#">Forgot Password?</a> </div>
+                     
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container"></div>
+    <div class="container-fluid"></div>
+  </div>
+  <div class="container"></div>
+  <footer class="footer"></footer>
+</div>
+<!-- /container -->
+
+</body>
+</html>
+
+<script>  
+  $(document).ready(function(){  
+     $('#login_button').click(function(e){  
+      e.preventDefault()
+        var username = $('#username').val();  
+        var pin = $('#pin').val();  
+        //alert(username + " " + pin + " ")
+        if(username != '' && pin != '')  
+        {  //alert(username + " 2" + pin + " ")
+         $.ajax({  
+            url:"dbconnect.php",  
+            method:"POST",  
+            data: {username:username, pin:pin}, 
+             
+            failure:function(){
+              alert("Could not connect")
+            },
+            success:function(data)  
+            {  
+               //salert(data);  
+               if(data == 'No')  
+               {  
+                  alert("Wrong Data");  
+               }  
+               else if (data == 'Yes')
+               {  
+                   //$('#myModal').hide();  
+                  //alert("data")
+                  //location.reload();  
+               }  
+               alert("data")
+            },
+            complete:function(){
+              alert("Complete")
+            } 
+         });  
+        }  
+        else  
+        {  
+         alert("Both Fields are required");  
+        }  
+        e.preventDefault()
+     });  
+     // $('#logout').click(function(){  
+     //    var action = "logout";  
+     //    $.ajax({  
+     // 		url:"dbconnect.php",  
+     // 		method:"POST",  
+     // 		data:{action:action},  
+     // 		success:function()  
+     // 		{  
+     // 			 location.reload();  
+     // 		}  
+     //    });  
+     // });  
+  });  
+  </script>

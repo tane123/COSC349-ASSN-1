@@ -23,7 +23,7 @@ Vagrant.configure("2") do |config|
       # labs, but recall that it means that our host computer can
       # connect to IP address 127.0.0.1 port 8080, and that network
       # request will reach our webserver VM's port 80.
-      webserver.vm.network "forwarded_port", guest: 80, host: 8080, host_ip: "127.0.0.1"
+      webserver.vm.network "forwarded_port", guest: 80, host: 5050, host_ip: "127.0.0.1"
       
       # We set up a private network that our VMs will use to communicate
       # with each other. Note that I have manually specified an IP
@@ -44,10 +44,16 @@ Vagrant.configure("2") do |config|
       webserver.vm.provision "shell", inline: <<-SHELL
         apt-get update
         apt-get install -y apache2 php libapache2-mod-php php-mysql
+        sudo apt install npm
+	# Moves to the website directory
+ 	cd /var/www/
+	# installs all of thee 
+	npm install
               
         # Change VM's webserver's configuration to use shared folder.
         # (Look inside test-website.conf for specifics.)
         cp /vagrant/test-website.conf /etc/apache2/sites-available/
+	cp -r /vagrant/www/ /var/
         # activate our website configuration ...
         a2ensite test-website
         # ... and disable the default website provided with Apache
@@ -128,11 +134,13 @@ Vagrant.configure("2") do |config|
     config.vm.define "adminserver" do |adminserver|
         adminserver.vm.hostname = "adminserver"
 
-        admin.vm.network "private_network", ip: "192.168.2.13"
-        webserver.vm.network "forwarded_port", guest: 80, host: 8081, host_ip: "127.0.0.1"
+        adminserver.vm.network "private_network", ip: "192.168.2.13"
+        adminserver.vm.network "forwarded_port", guest: 80, host: 5051, host_ip: "127.0.0.1"
         
-        admin.vm.provision "shell", inline: <<-SHELL
+        adminserver.vm.provision "shell", inline: <<-SHELL
           apt-get update
+        SHELL
+    end
           
   
   end
