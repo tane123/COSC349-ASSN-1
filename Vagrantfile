@@ -31,7 +31,7 @@ Vagrant.configure("2") do |config|
       dbserver.vm.hostname = "dbserver"
       dbserver.vm.network "private_network", ip: "192.168.2.12"
       dbserver.vm.network "forwarded_port", guest: 3036, host: 3036, host_ip: "127.0.0.1"
-      dbserver.vm.network "forwarded_port", guest: 80, host: 5051, host_ip: "127.0.0.1"
+      dbserver.vm.network "forwarded_port", guest: 80, host: 5052, host_ip: "127.0.0.1"
 
       dbserver.vm.synced_folder ".", "/vagrant", owner: "vagrant", group: "vagrant", mount_options: ["dmode=775,fmode=777"]
       

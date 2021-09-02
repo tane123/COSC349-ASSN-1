@@ -1,4 +1,4 @@
-USE fvision;
+USE my_database;
 Drop TABLE IF EXISTS users;
 Drop TABLE IF EXISTS notes;
 CREATE TABLE users (
