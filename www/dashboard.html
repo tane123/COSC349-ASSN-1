@@ -1,11 +1,64 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Untitled Document</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="file:///MACOS/Users/tane/favicon.ico">
+  <title>Narrow Jumbotron Template for Bootstrap</title>
+  <!-- Bootstrap core CSS -->
+  <!--	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js type="text/javascript"></script>-->
+  <script src="node_modules/jquery/dist/jquery.js"></script>
+  <script src="node_modules/popper.js/dist/popper.min.js"></script>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+  <style type="text/css"></style>
+  <link href="views/main.css" rel="stylesheet" type="text/css">
+  <!-- Custom styles for this template -->
 </head>
 
-<body>
-	<p>test</p>
+<body onLoad="displayNotes();">
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<div class="container-fluid">
+			<a class="navbar-brand">My Notes</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<form class="d-flex">
+					<input id="search" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+				</form>
+			</div>
+		</div>
+	</nav>
+
+	<div class="container my-3" id="container">
+		<div class="card text-dark bg-light mb-3">
+			<div class="card-body">
+				<h5 class="card-title">Write a note</h5>
+				<div class="form-group">
+					<textarea id="addNote" class="form-control" aria-label="With textarea"></textarea>
+				</div>
+				<br />
+				<button id="addBtn" class="btn btn-primary">Add</button>
+			</div>
+		</div>
+		
+		<hr>
+		
+		<div id="noMatches" class="row container-fluid">
+		
+		</div>
+		
+		<div id="notes" class="row container-fluid">
+			
+			
+		</div>
+	</div>
+	<script src="./script.js"></script>
 </body>
 </html>

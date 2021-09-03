@@ -152,7 +152,12 @@
         alert("Both Fields are required");
       }
       e.preventDefault()
-    });
+	});
+  });
+</script>
+
+<script>
+  $(document).ready(function() {
     $('#signup_button').click(function(e) {
       e.preventDefault()
       var username = $('#usernameSign').val();
@@ -167,8 +172,12 @@
             pin: pin
           },
           success: function(data) {
-			  alert("please login");
-			  $('#myModal').hide();
+			  alert("Loading Login Popup");
+			  $('#myModalSign').modal('hide');
+//			  setTimeout(() => {
+//				  console.log("waiting");
+//			  }, 1);
+			  $('#myModal').modal('show');
 		  }
         });
       } else {
@@ -178,3 +187,6 @@
     });  
   });
 </script>
+
+
+
