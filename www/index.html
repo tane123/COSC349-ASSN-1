@@ -136,15 +136,13 @@
 				console.log('my message' + err); 
 			},
           success: function(result) {
-            //alert(data);
-			  //alert(data);
 			  console.log(result);
              if (result == 1) {
-              //$('#myModal').hide();
 				 console.log(result);
               alert("Login successful!")
               window.location = "dashboard.html";
-				alert(data + " " + "test");
+				 localStorage.setItem('username', JSON.stringify(username));
+				 
             }
           }
         });
@@ -174,9 +172,6 @@
           success: function(data) {
 			  alert("Loading Login Popup");
 			  $('#myModalSign').modal('hide');
-//			  setTimeout(() => {
-//				  console.log("waiting");
-//			  }, 1);
 			  $('#myModal').modal('show');
 		  }
         });
