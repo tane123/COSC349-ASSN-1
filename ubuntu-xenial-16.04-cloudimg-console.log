@@ -655,9 +655,6 @@ See 'systemctl status vagrant.mount' for details.
 [    8.076261] cloud-init[1404]: Cloud-init v. 21.1-19-gbad84ad4-0ubuntu1~16.04.2 running 'modules:final' at Sat, 04 Sep 2021 12:04:00 +0000. Up 8.00 seconds.
 [    8.078043] cloud-init[1404]: Cloud-init v. 21.1-19-gbad84ad4-0ubuntu1~16.04.2 finished at Sat, 04 Sep 2021 12:04:00 000. Datasource DataSourceNoCloud [seed=/dev/sdb][dsmode=net].  Up 8.07 seconds
 [[0;32m  OK  [0m] Starte[ 7423.036189] e1000 0000:00:03.0 enp0s3: Reset adapter
-ily apt download activities...
-[[0;32m  OK  [0m] Reached target Cloud-init target.
-
-Ubuntu 16.04.7 LTS adminserver ttyS0
-
-adminserver login: 
+[23678.152028] e1000 0000:00:03.0 enp0s3: Reset adapter
+[26078.120166] e1000 0000:00:03.0 enp0s3: Reset adapter
+[31999.997246] e1000 0000:00:03.0 enp0s3: Reset adapter

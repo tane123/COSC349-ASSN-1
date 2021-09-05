@@ -123,7 +123,6 @@
       e.preventDefault()
       var username = $('#username').val();
       var pin = $('#pin').val();
-      alert(username + " " + pin + " ")
       if (username != '' && pin != '') {
         $.ajax({
           url: "dbconnect.php",
@@ -160,7 +159,6 @@
       e.preventDefault()
       var username = $('#usernameSign').val();
       var pin = $('#pinSign').val();
-      alert(username + " " + pin + " ")
       if (username != '' && pin != '') {
         $.ajax({
           url: "signup.php",
@@ -170,13 +168,13 @@
             pin: pin
           },
           success: function(data) {
-			  alert("Loading Login Popup");
+			  alert("Loading Login Popup!");
 			  $('#myModalSign').modal('hide');
 			  $('#myModal').modal('show');
 		  }
         });
       } else {
-        alert("Both Fields are required");
+        alert("Both Fields are required!");
       }
       e.preventDefault()
     });  

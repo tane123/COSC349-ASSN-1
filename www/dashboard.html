@@ -7,10 +7,10 @@
 <meta name="author" content="">
 <link rel="icon" href="file:///MACOS/Users/tane/favicon.ico">
 <title>Narrow Jumbotron Template for Bootstrap</title>
-<!-- Bootstrap core CSS -->
-<!--	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js type="text/javascript"></script>-->
-<script src="node_modules/jquery/dist/jquery.js"></script>
-<script src="node_modules/popper.js/dist/popper.min.js"></script>
+<!-- Bootstrap core CSS --> 
+<!--	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js type="text/javascript"></script>--> 
+<script src="node_modules/jquery/dist/jquery.js"></script> 
+<script src="node_modules/popper.js/dist/popper.min.js"></script> 
 <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,7 +20,7 @@
 <link href="views/main.css" rel="stylesheet" type="text/css">
 <!-- Custom styles for this template -->
 </head>
-<body id="backgroundBody">
+<body id="backgroundBody" onLoad="changeFont();">
 <div class="container"></div>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="text-align:center">
   <div class="container-fluid"> <a class="navbar-brand">My Notes</a>
@@ -31,21 +31,24 @@
       </form>
     </div>
     <h1 id="noteTextColour" style="color:white; font-size: 20px;  width: 9.5%; padding: 2x;">Font Colour: </h1>
-    <a href="#" class="btn btn-light btn-sm" ></a>
+    <input type="color" class="form-control form-control-color" id="colourInput" value="#ffffff" style="width: 5%; height: 30px" onChange="changeFontColour()">
     <h1 id="noteText" style="color:white; font-size: 20px;  width: 5%; padding: 2x;">Font: </h1>
-    <select id="input-font" onchange="">
-      <option value="Times New Roman, Times, serif;">Times New Roman</option>
-      <option value="Arial, Helvetica, sans-serif;">Arial</option>
-      <option value="Verdana">Verdana</option>
-      <option value="Impact">Impact</option>
+    <select id="input-font" onChange="changeFont()">
+      <option value="'Times New Roman'" style="font-family: 'Times New Roman'">Times New Roman</option>
+      <option value="Arial" style="font-family: Arial">Arial</option>
+      <option value="Verdana" style="font-family: Verdana">Verdana</option>
+      <option value="Impact" style="font-family:Impact">Impact</option>
     </select>
+	  
+
   </div>
+	<button id="logoutBtn" class="btn btn-sm btn-light">Logout</button>
 </nav>
 <div class="container my-3" id="container">
   <div class="card text-dark bg-light mb-3">
     <div class="card-body">
       <div class="form-group row">
-        <div class="col-xs-2"> </div>
+        <div class="col-xs-2"></div>
       </div>
       <div class="row"  >
         <div class="col-xl-6">
@@ -58,23 +61,17 @@
         <div class="offset-xl-0 col-xl-6" align="right" > </div>
       </div>
       <div class="form-group row">
-        <textarea id="addNote" class="form-control" aria-label="With textarea"></textarea>
+        <textarea id="addNote" class="form-control" aria-label="With textarea" style="margin-left: 13px; margin-right: 13px; margin-top: 10px"></textarea>
       </div>
-      <div id="inputErrorAlert" class="alert alert-warning"> 
-		  <a href="#" class="close" data-dismiss="alert">&times;</a> <strong>Error.</strong> Both fields are required
-		  
+      <div id="inputErrorAlert" class="alert alert-warning"> <a href="#" class="close" data-dismiss="alert">&times;</a> <strong>Error.</strong> Both fields are required </div>
+      <button id="addBtn" class="btn btn-primary">Add</button>
     </div>
-		<button id="addBtn" class="btn btn-primary">Add</button>
   </div>
-	</div>
   <div id="output"></div>
-<div id="noMatches" class="row container-fluid"> </div>
+  <div id="noMatches" class="row container-fluid"> </div>
   <div id="notes" class="row container-fluid"> </div>
-
 </div>
 </body>
 </html>
-<script>
 
-</script>
 <script src="./script.js"></script>

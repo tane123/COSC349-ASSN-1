@@ -8,8 +8,12 @@ $return_arr = array();
      $result = mysqli_query($connect, $query);  
 while($row = mysqli_fetch_array($result)){
     $note = $row['note'];
+	$subject = $row['subject'];
+	$id = $row['noteId'];
+	$user = $row['username'];
+	$date = $row['currDate'];
 
-    $return_arr[] = array("note" => $note);
+    $return_arr[] = array("note" => $note, "subject" => $subject, "id" => $id, "username" => $user, "date" => $date);
 }
 	 header('Content-Type: application/json');
 
