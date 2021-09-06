@@ -1,9 +1,5 @@
-// JavaScript DocumentdisplayNotes();
-
-
 document.addEventListener("DOMContentLoaded", ()=>{
 	displayNotes();
-	
 });
 document.getElementById('input-font').onloadstart = changeFont;
 
@@ -11,9 +7,7 @@ document.getElementById('input-font').onloadstart = changeFont;
 var addBtn = document.getElementById('addBtn');
 var logoutBtn = document.getElementById('logoutBtn');
 
-//function changeFontColour() {
-//  document.getElementById()
-//}
+// changees all of notes fonts.
 function changeFont(){
 	var inputFONT = document.getElementById('input-font');
 	let fontType = $('#input-font').find(':selected').val();
@@ -25,7 +19,7 @@ function changeFont(){
 }
 
 
-
+// changes the font colour of all of the notes.
 function changeFontColour(){
 	var inputColour = document.getElementById('colourInput').value;
 	let cards = document.getElementsByName('cardText');
@@ -34,6 +28,7 @@ function changeFontColour(){
 }
 }
 
+// waits for logout button to be pressed and logs outs
 logoutBtn.addEventListener('click', function(){
 	alert("Logging out!");
 	$.ajax({
@@ -48,7 +43,11 @@ logoutBtn.addEventListener('click', function(){
   });
 });
 
-// below event listener will add user input into the local storage
+/**
+This function waits for the add button to be pressed.
+Once it is pressed it transfer all relevant informatin to 
+addNotes php by using an ajax call.
+*/
 addBtn.addEventListener('click', function() {
   let addNote = document.getElementById('addNote');
   let notesString = addNote.value;
@@ -77,8 +76,10 @@ addBtn.addEventListener('click', function() {
 });
 
 
-// JSON.parse(localStorage.getItem('username'))
-// funtion to display data stored in the local storage
+/**
+This function displays all note currently in the database. 
+It uses an ajax call to add notes which will append all notes onto the page.
+*/
 function displayNotes() {
 	let fontType = $('#input-font').find(':selected').val();
 	var inputColour = document.getElementById('colourInput').value;
@@ -123,12 +124,9 @@ function displayNotes() {
 		 }
     }
 		let noteEle = document.getElementById('notes');
-
-
       noteEle.innerHTML = html;
 
 		return;
-		 
       }
 
   });
@@ -138,7 +136,9 @@ function displayNotes() {
 
 
 
-//function to delete a note
+/**
+This function delets a note by using an ajax call to the delete notes php
+*/
 function deleteNote(id) {
 	$.ajax({
     url: "deleteNotes.php",
@@ -158,13 +158,15 @@ function deleteNote(id) {
 
 }
 
-
+/**
+This function displays notes based off their input text 
+it works by finding all elements that match the input text 
+and sets their displays to block. Otherwise they get hidden.
+*/
 let search = document.getElementById('search');
 search.addEventListener('input', function(e) {
 
   let inputText = search.value;
-	
-
   //below statement will be executed when the search bar is emptied using backspace
   if (inputText == '') {
     document.getElementById('noMatches').innerHTML = '';
