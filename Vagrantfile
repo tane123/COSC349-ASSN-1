@@ -77,12 +77,13 @@ Vagrant.configure("2") do |config|
         adminserver.vm.network "private_network", ip: "192.168.2.13"
         adminserver.vm.network "forwarded_port", guest: 80, host: 5051, host_ip: "127.0.0.1"
       adminserver.vm.provision "shell", inline: <<-SHELL
-
+	apt update
 	apt install -y apache2 php-mysql php libapache2-mod-php 
 	cat /vagrant/hosts >> /etc/hosts
 	rm -f /var/www/html/index.html
 	cp /vagrant/index.php /var/www/html/index.php
 	cp /vagrant/adminer.css /var/www/html/
+	sudo service apache2 restart 
         SHELL
     end
           
