@@ -55,12 +55,14 @@ This server acts as administration for the database. Uses a thirdparty open-sour
 		```http://localhost:5051/```
 * It should have the default values as shown below. Username is ```webuser``` and the password is  ```admin``` 
 
-### Modifications:
-If any modifications are made the command below can be run to reload and reprovison the databases:
-* vagrant reload <server_name> --provision-with restart
 
 
 ![image](https://user-images.githubusercontent.com/19453292/132167688-af64af3c-7592-4e54-84da-86bdda61913f.png)
+
+
+### Modifications:
+If any modifications are made the command below can be run to reload and reprovison the databases:
+* vagrant reload <server_name> --provision-with restart
 
 Here is some screenshots of the app and a video of how to use it:
 
