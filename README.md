@@ -55,19 +55,18 @@ This server acts as administration for the database. Uses a thirdparty open-sour
 		```http://localhost:5051/```
 * It should have the default values as shown below. Username is ```webuser``` and the password is  ```admin``` 
 
-
+### Modifications:
+If any modifications are made the command below can be run to reload and reprovison the databases:
+*vagrant reload <server_name> --provision-with restart
 ![image](https://user-images.githubusercontent.com/19453292/132167688-af64af3c-7592-4e54-84da-86bdda61913f.png)
 
 Here is some screenshots of the app and a video of how to use it:
 
 ### Main Page:
-<img src="https://user-images.githubusercontent.com/19453292/132168235-e33ff70a-843c-4250-9c95-37eb8f0dc5e9.png" alt="drawing" width="1000"/>
-
-### Login Modal:
-<img src="https://user-images.githubusercontent.com/19453292/132168281-e7c3dbd7-2cf6-4d92-96a9-4f61c901d14f.png" alt="drawing" width="1000"/>
+<img src="https://user-images.githubusercontent.com/19453292/132168235-e33ff70a-843c-4250-9c95-37eb8f0dc5e9.png" alt="drawing" width="500"/>
 
 ### Dashboard and Note View:
-<img src="https://user-images.githubusercontent.com/19453292/132168333-335e52b9-6760-48d7-8e54-2695cec106ce.png" alt="drawing" width="1000"/>
+<img src="https://user-images.githubusercontent.com/19453292/132168333-335e52b9-6760-48d7-8e54-2695cec106ce.png" alt="drawing" width="500"/>
 
 ### Video
 [![](https://res.cloudinary.com/marcomontalbano/image/upload/v1630909380/video_to_markdown/images/youtube--hbHe_6ChSqo-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://youtu.be/hbHe_6ChSqo "")
