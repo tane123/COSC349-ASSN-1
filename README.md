@@ -57,7 +57,9 @@ This server acts as administration for the database. Uses a thirdparty open-sour
 
 ### Modifications:
 If any modifications are made the command below can be run to reload and reprovison the databases:
-*vagrant reload <server_name> --provision-with restart
+* vagrant reload <server_name> --provision-with restart
+
+
 ![image](https://user-images.githubusercontent.com/19453292/132167688-af64af3c-7592-4e54-84da-86bdda61913f.png)
 
 Here is some screenshots of the app and a video of how to use it:
