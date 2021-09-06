@@ -18,3 +18,6 @@ CREATE TABLE notes (
 
 
  INSERT INTO users VALUES ('admin',1234);
+
+ INSERT INTO notes VALUES ('admin', 'This is a test note', 'test', DEFAULT, CURDATE());
+ INSERT INTO notes VALUES ('admin', 'This is another test note for the marking team', 'TesTSt', DEFAULT, CURDATE());

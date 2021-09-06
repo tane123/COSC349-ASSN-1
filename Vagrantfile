@@ -82,8 +82,6 @@ Vagrant.configure("2") do |config|
 	cat /vagrant/hosts >> /etc/hosts
 	rm -f /var/www/html/index.html
 	cp /vagrant/index.php /var/www/html/index.php
-	sh /vagrant/nagios.sh
-
         SHELL
     end
           
