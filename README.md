@@ -51,9 +51,9 @@ Acts as a webserver for the main web application. It uses a LAMP stack to intera
 
 ### Admin Server: 
 This server acts as administration for the database. Uses a thirdparty open-source PHP file called Adminer. This could be a point of improvement by tailoring a website directly to context of this application.
--The admin server can be access via web browser through this link:
+* The admin server can be access via web browser through this link:
 		```http://localhost:5051/```
--It should have the default values as shown below. Username is ```webuser``` and the password is  ```admin``` 
+* It should have the default values as shown below. Username is ```webuser``` and the password is  ```admin``` 
 
 
 ![image](https://user-images.githubusercontent.com/19453292/132167688-af64af3c-7592-4e54-84da-86bdda61913f.png)
