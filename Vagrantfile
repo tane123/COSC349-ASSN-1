@@ -83,7 +83,7 @@ Vagrant.configure("2") do |config|
 	rm -f /var/www/html/index.html
 	cp /vagrant/index.php /var/www/html/index.php
 	cp /vagrant/adminer.css /var/www/html/
-	sudo service apache2 restart 
+	service apache2 restart 
         SHELL
     end
           
