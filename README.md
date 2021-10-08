@@ -1,8 +1,6 @@
 
 # COSC349 Assignment 1
-The Note Taker 5000 is a basic web application that provides simply yet elegant collaborative notes. This project is already deployed to AWS and can be accessed by this link:
-
-[Note Taker 500](http://3.26.26.212/index.html)
+The Note Taker 5000 is a basic web application that provides simply yet elegant collaborative notes. This project is already deployed to AWS.
 
 The application is built with two EC2 instances and two other services, RDS and S3, that handle note storage and file storage.
 Below is an explanantion of how the istances are work together to provide an identical exeperience to if it were running on local machines.
@@ -15,17 +13,13 @@ Create it so that the EC2 instance has access to the S3 bucket by using IAM auth
 To start login into the Websever EC2 instance and install all dependancies needed:
 
 ```sudo apt-get update```
-
 ```apt-get install -y apache2 php libapache2-mod-php php-mysql```
 
 Do the same on the Admin server.
-
 From here install the aws cli tool by running:
 
 ```curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"```
-
 ```unzip awscliv2.zip```
-
 ```sudo ./aws/install```
 
 From here sync all data needed from the S3 block storage using:
@@ -46,11 +40,9 @@ Acts a database for the internal storage of users passwords and notes. The notes
 The RDS instance can be mutated by using the mysql-client.
 
 This can be installed by running
-
 ```sudo apt-get install mysql-client```
 
 From here you can run 
-
 ```mysql -h <hostAddress> -u <username> -p```
 From there enter your password and make changes as needed.
 	
@@ -85,6 +77,6 @@ Here is some screenshots of the app and a video of how to use it:
 <img src="https://user-images.githubusercontent.com/19453292/132168333-335e52b9-6760-48d7-8e54-2695cec106ce.png" alt="drawing" width="500"/>
 
 ### Video
-[![](https://youtu.be/hbHe_6ChSqo)]
+[Youtube Link](https://youtu.be/hbHe_6ChSqo)]
 
 
