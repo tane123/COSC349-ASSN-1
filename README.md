@@ -1,5 +1,5 @@
 
-# COSC349 Assignment 1
+# COSC349 Assignment 2
 The Note Taker 5000 is a basic web application that provides simply yet elegant collaborative notes. This project is already deployed to AWS.
 
 The application is built with two EC2 instances and two other services, RDS and S3, that handle note storage and file storage.
