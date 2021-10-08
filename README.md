@@ -56,7 +56,7 @@ Acts as a webserver for the main web application. It uses a LAMP stack to intera
 
 * This can be accessed by using this URL: [Note Taker 500](http://3.26.26.212/index.html)
 * Its a simple as signing up, logging in and up adding a note. Here is a video that shows the proccess:
-* Or use the defualt username and pin
+* Or use the default username and pin
 * Username: ```admin```
 * Pin: ```1234```
 	
