@@ -15,6 +15,7 @@ Create it so that the EC2 instance has access to the S3 bucket by using IAM auth
 To start login into the Websever EC2 instance and install all dependancies needed:
 
 ```sudo apt-get update```
+
 ```apt-get install -y apache2 php libapache2-mod-php php-mysql```
 
 Do the same on the Admin server.
@@ -22,11 +23,14 @@ Do the same on the Admin server.
 From here install the aws cli tool by running:
 
 ```curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"```
+
 ```unzip awscliv2.zip```
+
 ```sudo ./aws/install```
 
 From here sync all data needed from the S3 block storage using:
 ```aws sync <s3 url> /var```
+
 And restart the apache service using:
 ```service apache2 restart```
 
@@ -42,9 +46,11 @@ Acts a database for the internal storage of users passwords and notes. The notes
 The RDS instance can be mutated by using the mysql-client.
 
 This can be installed by running
+
 ```sudo apt-get install mysql-client```
 
 From here you can run 
+
 ```mysql -h <hostAddress> -u <username> -p```
 From there enter your password and make changes as needed.
 	
