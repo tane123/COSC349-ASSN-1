@@ -23,9 +23,11 @@ From here install the aws cli tool by running:
 ```sudo ./aws/install```
 
 From here sync all data needed from the S3 block storage using:
+
 ```aws sync <s3 url> /var```
 
 And restart the apache service using:
+
 ```service apache2 restart```
 
 All php files that query the database using the mysqli file will have to be changed to your RDS instance
@@ -40,10 +42,13 @@ Acts a database for the internal storage of users passwords and notes. The notes
 The RDS instance can be mutated by using the mysql-client.
 
 This can be installed by running
+
 ```sudo apt-get install mysql-client```
 
 From here you can run 
+
 ```mysql -h <hostAddress> -u <username> -p```
+
 From there enter your password and make changes as needed.
 	
 ### Webserver: 
@@ -65,6 +70,7 @@ This server acts as administration for the database. Uses a thirdparty open-sour
 ### Modifications:
 If any modifications are made the command below can be run to reload and reprovison the website:
 This should be done from the Webserver EC2 instance. This will reupload and provision the website by grabbing it from the S3 storage. 
+
 ```aws s3 sync s3://<name of your bucket> /var/```
 ```sudo service apache2 restart```
 
