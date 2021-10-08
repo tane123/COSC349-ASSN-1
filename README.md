@@ -13,10 +13,14 @@ To use this application please, create a AWS account and recreate the instances 
 Create it so that the EC2 instance has access to the S3 bucket by using IAM authentication. This will allow for easy syncing with the S3 bucket to the EC3 storage. All machines must be set to public so that we can access them outside of another instance. The database is the most important one.
 
 To start login into the Websever EC2 instance and install all dependancies needed:
+
 ```sudo apt-get update```
 ```apt-get install -y apache2 php libapache2-mod-php php-mysql```
+
 Do the same on the Admin server.
+
 From here install the aws cli tool by running:
+
 ```curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"```
 ```unzip awscliv2.zip```
 ```sudo ./aws/install```
